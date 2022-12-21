@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "NodeNext",
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "importHelpers": true,
+  },
+  "include": [
+    "src"
+  ]
+}
