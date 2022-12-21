@@ -11,9 +11,10 @@ import {
   GrumpkinAddress,
   SchnorrSigner,
   EthAddress,
-  TxSettlementTime,
-  TxId,
   UserPaymentTx,
+  UserDefiTx,
+  UserAccountTx,
+  UserDefiClaimTx,
 } from "@aztec/sdk";
 import networkConfig from "./network_config.js";
 
@@ -119,7 +120,7 @@ const App = () => {
         "AssetId",
         "Value",
         "Fee",
-        "Sender?",
+        "Sender?"
       ],
     ];
     txs.map((tx) => {
@@ -153,6 +154,10 @@ const App = () => {
         assetId = tx.value.assetId.toString();
         fee = tx.fee.value.toString();
         isSender = tx.isSender.toString();
+      }
+      if (tx instanceof UserDefiTx || tx instanceof UserDefiClaimTx) {
+        value = tx.depositValue.value.toString();
+        assetId = tx.depositValue.assetId.toString();
       }
       rows.push([
         ethAccount!.toString(),
